@@ -241,8 +241,8 @@ MailService extends Thread {
     JavaMailSender javaMailSender;
     @Autowired
     UsersRepository usersRepository;
-    ClassPathResource logo = new ClassPathResource("Em-Tech-logo.png");
-    ClassPathResource banner = new ClassPathResource("Em-Tech-banner.png");
+    ClassPathResource logo = new ClassPathResource("Absa_Logo.png");
+    ClassPathResource banner = new ClassPathResource("Absa_Banner.jpg");
     public void sendEmail(String to,String cc, String message, String subject, boolean hasAttachment, String attachmentName, DataSource dataSource) throws MessagingException {
         if (enableEmail.equalsIgnoreCase("false")) {
             log.info("--------------------- Email sending is disabled! Check application.yml");
