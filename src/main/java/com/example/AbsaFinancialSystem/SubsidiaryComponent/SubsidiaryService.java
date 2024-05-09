@@ -33,4 +33,31 @@ public class SubsidiaryService {
         }
         return response;
     }
+
+    public EntityResponse<Subsidiary> updated(Subsidiary updatedSubsidiary) {
+        EntityResponse<Subsidiary> entityResponse=new EntityResponse<>();
+        Optional<Subsidiary> existingSubsidiaryOptional=subsidiaryRepo.findById(updatedSubsidiary.getId());
+        try{
+            if(existingSubsidiaryOptional.isPresent()){
+                Subsidiary existingSubsidiary=existingSubsidiaryOptional.get();
+                existingSubsidiary.setSubsidiaryName(updatedSubsidiary.getSubsidiaryName());
+                existingSubsidiary.setCreatedOn(updatedSubsidiary.getCreatedOn());
+
+                Subsidiary savedSubsidiary=subsidiaryRepo.save(updatedSubsidiary);
+                entityResponse.setMessage("subsidiary updated successfully");
+                entityResponse.setStatusCode(HttpStatus.OK.value());
+                entityResponse.setEntity(savedSubsidiary);
+            }else{
+                entityResponse.setMessage("subsidiary not found");
+                entityResponse.setStatusCode(HttpStatus.NOT_FOUND.value());
+                entityResponse.setEntity(null);
+            }
+        }catch(Exception e){
+            log.error("An error occurred while updating subsidiary",e);
+            entityResponse.setMessage("An error occurred while updating subsidiary"+e.getMessage());
+            entityResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            entityResponse.setEntity(null);
+        }
+        return entityResponse;
+    }
 }
