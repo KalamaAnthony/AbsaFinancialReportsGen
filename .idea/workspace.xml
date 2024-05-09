@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a413dc8-abc1-468d-8ff6-d0095b9546df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth_Backend/src/main/java/com/example/EMTECH_ERP/BACKEND/AuthenticationModule/Auditing/AuditRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth_Backend/src/main/java/com/example/EMTECH_ERP/BACKEND/AuthenticationModule/Auditing/AuditRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth_Backend/src/main/java/com/example/EMTECH_ERP/BACKEND/AuthenticationModule/Auditing/Auditing.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth_Backend/src/main/java/com/example/EMTECH_ERP/BACKEND/AuthenticationModule/Auditing/Auditing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth_Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Auth_Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/LedgerComponent/LedgerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/LedgerComponent/LedgerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/LedgerComponent/LedgerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/LedgerComponent/LedgerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +35,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AbsaFinancialSystemApplication.executor": "Run",
+    "Application.EmtechErpBackendApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging chief",
+    "git-widget-placeholder": "chief",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Admin/Desktop/ABSA_SOLUTION/AbsaFinancialReportsGen",
     "settings.editor.selected.configurable": "vcs.Git"
@@ -41,6 +49,51 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\ABSA_SOLUTION\AbsaFinancialReportsGen\Reports" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.AbsaFinancialSystemApplication">
+    <configuration name="AbsaFinancialSystemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.AbsaFinancialSystem.AbsaFinancialSystemApplication" />
+      <module name="ProcurementToPay" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.AbsaFinancialSystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Auth" type="Application" factoryName="Application">
+      <module name="Erp_service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmtechErpBackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.EMTECH_ERP.BACKEND.EmtechErpBackendApplication" />
+      <module name="Erp_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.EMTECH_ERP.BACKEND.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Auth" />
+      <item itemvalue="Application.AbsaFinancialSystemApplication" />
+      <item itemvalue="Application.EmtechErpBackendApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AbsaFinancialSystemApplication" />
+        <item itemvalue="Application.EmtechErpBackendApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

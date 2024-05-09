@@ -24,4 +24,5 @@ public class SubsidiaryController {
     public EntityResponse<Subsidiary> update(@RequestBody Subsidiary updatedSubsidiary){
         return subsidiaryService.updated(updatedSubsidiary);
     }
+
 }

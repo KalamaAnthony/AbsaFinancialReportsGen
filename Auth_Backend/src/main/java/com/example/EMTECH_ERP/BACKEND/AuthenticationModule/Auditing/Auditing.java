@@ -19,8 +19,14 @@ public class Auditing {
     private Date loginTime;
     private Date logoutTime;
     private String username;
+    private String requestip;
     private String activity;
+    private String address;
     private String os;
     private String browser;
     private String status;
+    private String action;
+
+    public void setIpAddress(String remoteAddr) {
+    }
 }
