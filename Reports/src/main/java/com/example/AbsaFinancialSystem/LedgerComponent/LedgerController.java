@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/ledger")
+@CrossOrigin
 public class LedgerController {
     @Autowired
      LedgerService ledgerService;
