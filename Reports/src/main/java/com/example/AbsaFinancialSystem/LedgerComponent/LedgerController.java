@@ -23,4 +23,9 @@ public class LedgerController {
 
     }
 
+    @GetMapping("/find/all/{in ledger}")
+    public EntityResponse findAll() {
+        return ledgerService.findAll();
+
+}
 }
