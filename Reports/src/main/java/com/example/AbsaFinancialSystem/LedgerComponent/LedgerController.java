@@ -35,5 +35,9 @@ public class LedgerController {
         return ledgerService.findAll();
 
 }
+//    @GetMapping("/balance-sheet")
+//    public Ledger generateBalanceSheet() {
+//        return ledgerService.generateBalanceSheet();
+//    }
 
 }

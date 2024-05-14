@@ -100,5 +100,24 @@ public class LedgerService {
         }
         return response;
     }
+//    public Ledger generateBalanceSheet() {
+//        List<Ledger> ledgerEntries = ledgerRepo.findAll();
+//        double totalAssets = 0;
+//        double totalLiabilities = 0;
+//        double equity = 0;
+//
+//        for (Ledger entry : ledgerEntries) {
+//            if (entry.getAccountType().equals("Balance Sheet")) {
+//                if (entry.getNet() > 0) {
+//                    totalAssets += entry.getNet();
+//                } else {
+//                    totalLiabilities -= entry.getNet(); // Subtracting the negative amount to make it positive
+//                }
+//            } else if (entry.getAccountType().equals("Equity")) {
+//                equity += entry.getNet();
+//            }
+//
+//    }
+//}
 }
 
