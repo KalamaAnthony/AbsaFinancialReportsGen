@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a413dc8-abc1-468d-8ff6-d0095b9546df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth_Backend/src/main/java/com/example/EMTECH_ERP/BACKEND/AuthenticationModule/Auditing/AuditRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth_Backend/src/main/java/com/example/EMTECH_ERP/BACKEND/AuthenticationModule/Auditing/AuditRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth_Backend/src/main/java/com/example/EMTECH_ERP/BACKEND/AuthenticationModule/Auditing/Auditing.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth_Backend/src/main/java/com/example/EMTECH_ERP/BACKEND/AuthenticationModule/Auditing/Auditing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth_Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Auth_Backend/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/LedgerComponent/LedgerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/LedgerComponent/LedgerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/LedgerComponent/LedgerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/LedgerComponent/LedgerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +15,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="chief" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -33,18 +33,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AbsaFinancialSystemApplication.executor": "Run",
-    "Application.EmtechErpBackendApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "chief",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/ABSA_SOLUTION/AbsaFinancialReportsGen",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AbsaFinancialSystemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EmtechErpBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;chief&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/ABSA_SOLUTION/AbsaFinancialReportsGen&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\ABSA_SOLUTION\AbsaFinancialReportsGen\Reports" />
@@ -84,8 +84,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Auth" />
       <item itemvalue="Application.AbsaFinancialSystemApplication" />
+      <item itemvalue="Application.Auth" />
       <item itemvalue="Application.EmtechErpBackendApplication" />
     </list>
     <recent_temporary>
