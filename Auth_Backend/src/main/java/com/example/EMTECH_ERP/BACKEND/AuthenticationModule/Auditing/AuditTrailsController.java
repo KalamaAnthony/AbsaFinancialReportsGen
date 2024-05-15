@@ -56,6 +56,4 @@ public class AuditTrailsController {
         auditing.setActivity(activity);
         auditing.setUsername(RequestUsernameContext.getRequestUsername());
         auditing.setRequestip(RequestIpContext.getRequestIp());
-        repository.save(auditing);
-    }
-}
+        repository.save(audi
