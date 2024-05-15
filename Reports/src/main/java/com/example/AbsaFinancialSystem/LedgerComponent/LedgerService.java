@@ -2,13 +2,17 @@ package com.example.AbsaFinancialSystem.LedgerComponent;
 
 import com.example.AbsaFinancialSystem.Utilities.EntityResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.usermodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,6 +37,72 @@ public class LedgerService {
 
         } catch (Exception e) {
             log.error("error {}", e);
+        }
+        return response;
+    }
+    private List<Ledger> readExcelFile(MultipartFile file) throws IOException {
+        Workbook workbook = WorkbookFactory.create(file.getInputStream());
+        Sheet sheet = workbook.getSheetAt(0);
+        List<Ledger> ledgers = new ArrayList<>();
+
+        try {
+            for (Row row : sheet) {
+                if (row.getRowNum() == 0) {
+                    continue;
+                }
+                Ledger ledger1 = new Ledger();
+
+                ledger1.setAccountNo(getStringValue(row.getCell(0)));
+                ledger1.setAccountDescription(getStringValue(row.getCell(1)));
+                ledger1.setAccountType(getStringValue(row.getCell(2)));
+                ledger1.setSubCategory(getStringValue(row.getCell(3)));
+                ledger1.setNet(Double.parseDouble(getStringValue(row.getCell(4))));
+
+                //parse the date
+
+
+                ledgers.add(ledger1);
+            }
+        } finally {
+            workbook.close();
+        }
+        return ledgers;
+    }
+
+    private String getStringValue(Cell cell) {
+        if (cell == null) {
+            return null;
+        }
+        switch (cell.getCellType()) {
+            case STRING:
+                return cell.getStringCellValue();
+            case NUMERIC:
+                if (DateUtil.isCellDateFormatted(cell)) {
+                    return cell.getDateCellValue().toString();
+                } else {
+                    return String.valueOf(cell.getNumericCellValue());
+                }
+            case BOOLEAN:
+                return String.valueOf(cell.getBooleanCellValue());
+            case BLANK:
+                return "";
+            default:
+                return null;
+
+    }}
+    public EntityResponse uploadFile(MultipartFile files) {
+        EntityResponse response = new EntityResponse<>();
+        try {
+            List<Ledger> accounts = readExcelFile(files);
+            response.setEntity(accounts);
+            response.setMessage("successfully converted");
+            ledgerRepo.saveAll(accounts);
+        } catch (Exception e) {
+            log.error("Failed to save Transactions", e);
+            response.setMessage("Failed to save Transactions");
+            response.setEntity(null);
+            response.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+
         }
         return response;
     }
