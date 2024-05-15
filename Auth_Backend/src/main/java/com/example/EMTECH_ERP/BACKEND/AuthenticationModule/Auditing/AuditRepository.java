@@ -15,11 +15,23 @@ public interface AuditRepository extends JpaRepository<Auditing,Long> {
     @Query(nativeQuery = true,value = "SELECT * FROM audittrails WHERE username = :username AND starttime LIKE %:starttime%")
     List<Auditing> todayTrails(@Param("username") String username, @Param("starttime") String starttime);
 
+<<<<<<< Updated upstream
     //Select all trails for one user
     @Transactional
     @Query(nativeQuery = true,value = "SELECT * FROM audittrails WHERE username = :username")
     List<Auditing> allTrails(@Param("username") String username);
 
+=======
+    @Transactional
+    @Query(nativeQuery = true,value = "SELECT * FROM audittrails WHERE username = :username AND starttime LIKE %:starttime%")
+    List<Auditing> todayTrails(@Param("username") String username, @Param("starttime") String starttime);
+
+    //Select all trails for one user
+    @Transactional
+    @Query(nativeQuery = true,value = "SELECT * FROM audittrails WHERE username = :username")
+    List<Auditing> allTrails(@Param("username") String username);
+
+>>>>>>> Stashed changes
     @Transactional
     @Query(nativeQuery = true,value = "select * from audittrails where starttime between :fromDate and :toDate ORDER BY ID DESC;")
     List<Auditing> allTrailsByDate(String fromDate, String toDate);

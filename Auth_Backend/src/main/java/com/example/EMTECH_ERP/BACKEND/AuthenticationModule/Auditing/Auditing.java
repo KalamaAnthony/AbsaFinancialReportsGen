@@ -25,7 +25,13 @@ public class Auditing {
     private String os;
     private String browser;
     private String status;
+<<<<<<< Updated upstream
     private String action;
+=======
+
+    public void setRequestip(String requestIp) {
+    }
+>>>>>>> Stashed changes
 
     public void setIpAddress(String remoteAddr) {
     }
