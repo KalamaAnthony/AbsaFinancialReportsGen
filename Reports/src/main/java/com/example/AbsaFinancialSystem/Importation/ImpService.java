@@ -1,7 +1,9 @@
+
 package com.example.AbsaFinancialSystem.Importation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,17 +25,19 @@ public class ImpService {
 
     public List<Imp> loadExcelFile(MultipartFile file) throws IOException {
         List<Imp> records = new ArrayList<>();
-        try (InputStream fileInputStream = file.getInputStream()) {
-            Workbook workbook = WorkbookFactory.create(fileInputStream);
+        try (InputStream fileInputStream = file.getInputStream();
+             Workbook workbook = new XSSFWorkbook(fileInputStream)) {
             Sheet sheet = workbook.getSheetAt(0);
 
-            for (Row curRow : sheet) {
+
+
+            for (var curRow : sheet) {
                 if (curRow == null || curRow.getRowNum() == 0) {
                     continue; // Skip header row
                 }
 
                 boolean isEmptyRow = true;
-                for (Cell cell : curRow) {
+                for (var cell : curRow) {
                     if (cell != null && cell.getCellType() != CellType.BLANK) {
                         isEmptyRow = false;
                         break;
@@ -44,13 +48,14 @@ public class ImpService {
                     continue;
                 }
 
-                Imp record = new Imp();
+
+                var record = new Imp();
                 record.setPeriod(getCellStringValue(curRow.getCell(0)));
                 record.setAccount(parseLongFromCell(curRow.getCell(1)));
                 record.setAccountDescription(getCellStringValue(curRow.getCell(2)));
                 record.setPlOrBs(getCellStringValue(curRow.getCell(3)));
                 record.setSubCategory(getCellStringValue(curRow.getCell(4)));
-                String clientValue = getCellStringValue(curRow.getCell(5));
+                var clientValue = getCellStringValue(curRow.getCell(5));
                 if (!clientValue.isEmpty()) {
                     BigDecimal netValue = convertNetValue(clientValue);
                     record.setNet(netValue);
@@ -60,10 +65,8 @@ public class ImpService {
 
                 records.add(record);
             }
-
-            workbook.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Error processing Excel file", e);
             throw e;
         }
 
@@ -76,35 +79,31 @@ public class ImpService {
         if (cell == null) {
             return "";
         }
-        switch (cell.getCellType()) {
-            case STRING:
-                return cell.getStringCellValue().trim();
-            case NUMERIC:
-                return BigDecimal.valueOf(cell.getNumericCellValue()).toPlainString();
-            default:
-                return "";
-        }
+        return switch (cell.getCellType()) {
+            case STRING -> cell.getStringCellValue().trim();
+            case NUMERIC -> BigDecimal.valueOf(cell.getNumericCellValue()).toPlainString();
+            default -> "";
+        };
     }
 
     private Long parseLongFromCell(Cell cell) {
         if (cell == null) {
             return null;
         }
-        switch (cell.getCellType()) {
-            case NUMERIC:
-                return (long) cell.getNumericCellValue();
-            case STRING:
-                String value = cell.getStringCellValue().trim();
+        return switch (cell.getCellType()) {
+            case NUMERIC -> (long) cell.getNumericCellValue();
+            case STRING -> {
+                var value = cell.getStringCellValue().trim();
                 if (!value.isEmpty()) {
                     try {
-                        return Long.valueOf(value.split("\\.")[0]);
+                        yield Long.valueOf(value.split("\\.")[0]);
                     } catch (NumberFormatException e) {
                         log.error("Invalid number format for value: {}", value, e);
                     }
                 }
-                return null;
-            default:
-                return null;
-        }
+                yield null;
+            }
+            default -> null;
+        };
     }
 }
