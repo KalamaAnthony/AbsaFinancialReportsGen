@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a413dc8-abc1-468d-8ff6-d0095b9546df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/BalanceSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/BalanceSheetAccCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/BalanceSheetCat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/CategoryEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/Enumsubclasses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubCatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubCatEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubcatService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubclassRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/Imp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/Imp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
