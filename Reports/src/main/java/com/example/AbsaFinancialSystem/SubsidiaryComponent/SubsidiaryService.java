@@ -12,7 +12,6 @@ import java.util.Optional;
 @Slf4j
 public class SubsidiaryService {
     @Autowired
-
     SubsidiaryRepo subsidiaryRepo;
     public EntityResponse add(Subsidiary subsidiary) {
         EntityResponse response = new EntityResponse<>();

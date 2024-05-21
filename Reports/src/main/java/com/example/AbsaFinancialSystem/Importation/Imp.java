@@ -1,19 +1,18 @@
 package com.example.AbsaFinancialSystem.Importation;
 
+import com.example.AbsaFinancialSystem.SubcatConfig.SubCategory;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "imp")
 public class Imp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,8 +20,10 @@ public class Imp {
     private String period;
     private Long account;
     private String accountDescription;
-    private String plOrBs;
-    private String subCategory;
+    @ManyToOne
+    private SubCategory subcategory;
+
+
     private BigDecimal net;
 
     public static BigDecimal convertNetValue(String clientValue) {

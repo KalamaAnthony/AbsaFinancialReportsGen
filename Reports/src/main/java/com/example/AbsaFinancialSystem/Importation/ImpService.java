@@ -1,6 +1,8 @@
 
 package com.example.AbsaFinancialSystem.Importation;
 
+import com.example.AbsaFinancialSystem.SubcatConfig.SubCategory;
+import com.example.AbsaFinancialSystem.SubcatConfig.SubclassRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -13,6 +15,7 @@ import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static com.example.AbsaFinancialSystem.Importation.Imp.convertNetValue;
 
@@ -22,6 +25,8 @@ public class ImpService {
 
     @Autowired
     private ImpRepo impRepo;
+    @Autowired
+    SubclassRepository subclassRepository;
 
     public List<Imp> loadExcelFile(MultipartFile file) throws IOException {
         List<Imp> records = new ArrayList<>();
@@ -53,8 +58,12 @@ public class ImpService {
                 record.setPeriod(getCellStringValue(curRow.getCell(0)));
                 record.setAccount(parseLongFromCell(curRow.getCell(1)));
                 record.setAccountDescription(getCellStringValue(curRow.getCell(2)));
-                record.setPlOrBs(getCellStringValue(curRow.getCell(3)));
-                record.setSubCategory(getCellStringValue(curRow.getCell(4)));
+//                record.setPlOrBs(getCellStringValue(curRow.getCell(3)));
+                log.info(" step 5");
+                Optional<SubCategory> subCategory= subclassRepository.findBySubcategory(getCellStringValue(curRow.getCell(4)));
+
+                record.setSubcategory(subCategory.get());
+
                 var clientValue = getCellStringValue(curRow.getCell(5));
                 if (!clientValue.isEmpty()) {
                     BigDecimal netValue = convertNetValue(clientValue);
