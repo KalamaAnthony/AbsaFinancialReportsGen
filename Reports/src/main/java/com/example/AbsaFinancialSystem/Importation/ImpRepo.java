@@ -15,6 +15,8 @@ public interface ImpRepo extends JpaRepository<Imp, Long> {
 
     @Query(value = "SELECT SUM(net) FROM imp WHERE subcategory_id= :categoryTypeId GROUP BY subcategory_id", nativeQuery = true)
     Long findSumOfSubcategories(@Param("categoryTypeId") long categoryTypeId);
+    @Query(value = "SELECT net FROM imp WHERE subcategory_id= :categoryTypeId", nativeQuery = true)
+    Long findNetOfSubcategories(@Param("categoryTypeId") long categoryTypeId);
 
 }
 
