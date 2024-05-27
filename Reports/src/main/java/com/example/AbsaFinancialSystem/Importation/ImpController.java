@@ -40,7 +40,7 @@ public class ImpController {
 
     }
 
-    @GetMapping("/getBalanceSheet")
+    @GetMapping("/getBalanceSheet1")
     public ResponseEntity<?> getBalanceSheet(@RequestParam("subId") int subId, String title){
         try{
             BalanceSheet response = new BalanceSheet();
@@ -96,7 +96,74 @@ public class ImpController {
                 response.setCategories(categories);
             }
 
-           // List<SubCategory>
+            // List<SubCategory>
+            System.out.println(subsidiaryCategories);
+            return ResponseEntity.status(200).body(response);
+
+        }catch(Exception e){
+            return ResponseEntity.status(500).body(e.getMessage());
+        }
+
+    }
+    @GetMapping("/getBalanceSheet")
+    public ResponseEntity<?> getBalanceSheetData(@RequestParam("subId") int subId, String title){
+        try{
+            BalanceSheet response = new BalanceSheet();
+            response.setTitle(title);
+            List<String> accountCategories = repo.findAllAccountCategories(subId);
+            System.out.println("Step 2");
+            List<BalanceSheetCat> categories = new ArrayList<>();
+            System.out.println("Step 3");
+            String balanceSheet = "";
+
+
+            for(String accType: accountCategories){
+                //System.out.println("current account type ---->" + accType);
+                if(accType.toLowerCase().contains("bs")){
+
+                    System.out.println("Step 4");
+                    balanceSheet = accType;
+                }
+            }
+            //getting all accounts to be used in the balance sheet.
+            System.out.println(balanceSheet);
+            List<String> subsidiaryCategories = repo.findAllSubsidiaryCategories(subId, balanceSheet);
+
+
+            for(String accCategory: subsidiaryCategories){
+                long sum = 0;
+                System.out.println("Step 5");
+
+                String currentCategory = accCategory;
+                //System.out.println("oyaaaaaaaaaaaaaaaaaaaaaaa---- Category babaaaa "+ currentCategory);
+                BalanceSheetCat sheetCategory = new BalanceSheetCat();
+                sheetCategory.setTitle(currentCategory);
+
+                //getting all sub categories under the top category
+                List<String> currentCategorySubCategories = repo.findAllAccountSubCategories(subId, currentCategory);
+                List<BalanceSheetAccCategory> accCategories = new ArrayList<>();
+                for (String accSubCat: currentCategorySubCategories){
+                    BalanceSheetAccCategory accCurrentCat = new BalanceSheetAccCategory();
+
+                    accCurrentCat.setTitle(accSubCat);
+                    //System.out.println("oyaaaaaaaaaaaaaaaaaaaaaaa tuko kwa sub category----"+ accSubCat);
+                    //getting the id of each subcategory
+                    long categoryTypeId = repo.findAccountCategoryId(accSubCat);
+                    List<Long> total= impRepo.findNetOfSubcategories(categoryTypeId);
+                    long totalSum = 0;
+                    for (Long net: total){
+                        totalSum +=net;
+                    }
+                    // sum net value of each sub category
+                    accCurrentCat.setSum(totalSum);
+                    accCategories.add(accCurrentCat);
+                }
+                sheetCategory.setAccCategories(accCategories);
+                categories.add(sheetCategory);
+                response.setCategories(categories);
+            }
+
+            // List<SubCategory>
             System.out.println(subsidiaryCategories);
             return ResponseEntity.status(200).body(response);
 
@@ -106,3 +173,4 @@ public class ImpController {
 
     }
 }
+
