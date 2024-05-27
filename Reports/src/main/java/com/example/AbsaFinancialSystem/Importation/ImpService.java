@@ -1,4 +1,3 @@
-
 package com.example.AbsaFinancialSystem.Importation;
 
 import com.example.AbsaFinancialSystem.SubcatConfig.SubCategory;
@@ -26,15 +25,13 @@ public class ImpService {
     @Autowired
     private ImpRepo impRepo;
     @Autowired
-    SubclassRepository subclassRepository;
+    private SubclassRepository subclassRepository;
 
     public List<Imp> loadExcelFile(MultipartFile file) throws IOException {
         List<Imp> records = new ArrayList<>();
         try (InputStream fileInputStream = file.getInputStream();
              Workbook workbook = new XSSFWorkbook(fileInputStream)) {
             Sheet sheet = workbook.getSheetAt(0);
-
-
 
             for (var curRow : sheet) {
                 if (curRow == null || curRow.getRowNum() == 0) {
@@ -53,16 +50,26 @@ public class ImpService {
                     continue;
                 }
 
-
                 var record = new Imp();
                 record.setPeriod(getCellStringValue(curRow.getCell(0)));
                 record.setAccount(parseLongFromCell(curRow.getCell(1)));
                 record.setAccountDescription(getCellStringValue(curRow.getCell(2)));
 //                record.setPlOrBs(getCellStringValue(curRow.getCell(3)));
-                log.info(" step 5");
-                Optional<SubCategory> subCategory= subclassRepository.findBySubcategory(getCellStringValue(curRow.getCell(4)));
+                log.info("step 5");
 
-                record.setSubcategory(subCategory.get());
+                String subCategoryValue = getCellStringValue(curRow.getCell(4));
+                Optional<SubCategory> subCategoryOpt = subclassRepository.findBySubcategory(subCategoryValue);
+
+                if (subCategoryOpt.isPresent()) {
+                    record.setSubcategory(subCategoryOpt.get());
+                } else {
+                    log.warn("SubCategory not found for value: " + subCategoryValue);
+                    // Optionally, you can set a default value or handle it differently
+                    // e.g., continue to the next row
+                    continue;
+                }
+
+                log.info("Step 6");
 
                 var clientValue = getCellStringValue(curRow.getCell(5));
                 if (!clientValue.isEmpty()) {

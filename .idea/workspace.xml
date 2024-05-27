@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a413dc8-abc1-468d-8ff6-d0095b9546df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/BalanceSheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/BalanceSheetAccCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/BalanceSheetCat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/CategoryEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/Enumsubclasses.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubCatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubCatEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubcatService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubcatConfig/SubclassRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Reports/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Reports/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reports/src/main/resources/Balance.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/Imp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/Imp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/Importation/ImpService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/src/main/java/com/example/AbsaFinancialSystem/SubsidiaryComponent/SubsidiaryService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,19 +47,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AbsaFinancialSystemApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EmtechErpBackendApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Kipkemez!&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/ABSA_SOLUTION/AbsaFinancialReportsGen&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AbsaFinancialSystemApplication.executor": "Run",
+    "Application.EmtechErpBackendApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "test2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Admin/Desktop/ABSA_SOLUTION/AbsaFinancialReportsGen",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\ABSA_SOLUTION\AbsaFinancialReportsGen\Reports" />
@@ -123,6 +114,7 @@
     <attachedChunks>
       <set>
         <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-e1d2075fd9a7-b4911678" />
       </set>
     </attachedChunks>
   </component>
